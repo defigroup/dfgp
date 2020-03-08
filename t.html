@@ -71,7 +71,7 @@ Decentralized Financial Products of the next generation.">
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/x">css templates</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
+<section class="engine"><a href="https://mobirise.info/j">website templates</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
     <!---->
     
     <!---->
@@ -438,7 +438,7 @@ var contractAddress='TNT7MuGDK8hdZeeWs9euSDimYkDN2sW6nG';
   var toinvest=0;
   var newname=''; 
   var locking=0;
-  var myaddress=false;
+  var myaddress;
   var _refaddr = '';
     
 _refaddr = getUrlVars()["t"];
@@ -714,14 +714,18 @@ let _nameavailable=await contractInstance.checknameavailable(newname).call();
     }
     
     
-    if (typeof window.tronWeb !== 'undefined')myaddress=tronWeb.defaultAddress.base58;
+if (typeof window.tronWeb !== 'undefined')myaddress=tronWeb.defaultAddress.base58;
     
 accountInterval2 = setInterval(function () {
-	if (typeof window.tronWeb !== 'undefined'){		
-if(myaddress!=tronWeb.defaultAddress.base58){
-		if(myaddress==false&&tronWeb.defaultAddress.base58 != false) location.reload();
-               myaddress=tronWeb.defaultAddress.base58;
+  if(myaddress==false&&tronWeb.defaultAddress.base58 != false) location.reload();
+    
+    if(myaddress!=tronWeb.defaultAddress.base58){
+        myaddress = tronWeb.defaultAddress.base58;
+			
 }
+  
+	if (typeof window.tronWeb !== 'undefined'){		
+
   if(tronWeb.defaultAddress.base58 != false){
 document.getElementById("installmetamask").style.display = "none";
   console.log('started');
