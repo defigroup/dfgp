@@ -71,7 +71,7 @@ Decentralized Financial Products of the next generation.">
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/c">site builder</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
+<section class="engine"><a href="https://mobirise.info/h">create your own web page for free</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
     <!---->
     
     <!---->
@@ -386,11 +386,8 @@ Each Bond pays you 2% of it's value every day,<strong> </strong>forever.<br>Each
         </div>
     </div>
   <script>
-	
-	
 var started=0;	
-	
-    function getCookie(cname) {
+function getCookie(cname) {
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
   var ca = decodedCookie.split(';');
@@ -405,13 +402,14 @@ var started=0;
   }
   return "";
 }
-	function setCookie(cname,cvalue,exdays) {
+
+function setCookie(cname,cvalue,exdays) {
   var d = new Date();
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
   var expires = "expires=" + d.toGMTString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
-	var refcookie=getCookie("nodeT");
+var refcookie=getCookie("nodeT");
 
 
 function getUrlVars() {
@@ -419,11 +417,9 @@ function getUrlVars() {
 			var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
 				vars[key] = value;
 			});
-			return vars;
+	return vars;
 }
 	
-
-    
 
 function roundToFour(num) {
 	return +(Math.floor(num + "e+4") + "e-4");
@@ -431,7 +427,6 @@ function roundToFour(num) {
 function roundToTwo(num) {
 	return +(Math.floor(num + "e+2") + "e-2");
 }
-
 function round(num) {
 	return +(Math.floor(num + "e+1") + "e-1");
 }
@@ -442,10 +437,10 @@ var contractAddress='TNT7MuGDK8hdZeeWs9euSDimYkDN2sW6nG';
   var name='';
   var toinvest=0;
   var newname=''; 
-    var locking=0;
-    var myaddress=false;
+  var locking=0;
+  var myaddress=false;
+  var _refaddr = '';
     
-var _refaddr = '';
 _refaddr = getUrlVars()["t"];
 if (_refaddr == undefined) _refaddr = '';
 if(_refaddr!='')setCookie("nodeT", _refaddr, 1);
@@ -454,10 +449,8 @@ if(_refaddr==''&&refcookie!='')_refaddr=refcookie;
 
 console.log(_refaddr);
 
-    myaddress=tronWeb.defaultAddress.base58;
-    
+myaddress=tronWeb.defaultAddress.base58;
 accountInterval2 = setInterval(function () {
-	
 			
 if(myaddress!=tronWeb.defaultAddress.base58){
 		if(myaddress==false&&tronWeb.defaultAddress.base58 != false) location.reload();
@@ -468,15 +461,13 @@ document.getElementById("installmetamask").style.display = "none";
   console.log('started');
    start();
 }
-}, 2000);
+}, 2000);    
+
     
 async function start() {
 started=1;
 let MyContract = await tronWeb.contract().at(contractAddress);
-  
-  
  
-  
   let _name= await MyContract.myname().call();
   
     name=_name;  
@@ -644,7 +635,7 @@ let args = {
     
     async function updateprice() {
 	if(started>0){	
-
+let MyContract = await tronWeb.contract().at(contractAddress);
      toinvest = parseFloat(document.getElementsByName('ETH')[0].value*1000000);
   let _price=await MyContract.price(window.tronWeb.toHex(round(toinvest))).call();
   document.getElementById("price").innerHTML=roundToTwo(_price/1000000);
@@ -740,11 +731,6 @@ let _nameavailable=await contractInstance.checknameavailable(newname).call();
 
         }
     }
-
- 
-
-
- 
   </script>
 </section>
 
