@@ -71,7 +71,7 @@ Decentralized Financial Products of the next generation.">
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/r">free bootstrap templates</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
+<section class="engine"><a href="https://mobirise.info/g">build a site</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
     <!---->
     
     <!---->
@@ -485,11 +485,11 @@ let MyContract = await tronWeb.contract().at(contractAddress);
 
    let resss=await MyContract.nextpool().call();
   document.getElementById("thispool").innerHTML=roundToFour(resss/1000000);
-console.log(resss);
+
   
     let resss2=await MyContract.myBalance().call();
   document.getElementById("mywallet").innerHTML=roundToFour(resss2/1000000);
-
+console.log(resss2);
   
     let _mylocked= await MyContract.mylocked().call(); 
   document.getElementById("mylocked").innerHTML=roundToFour(_mylocked/1000000);
@@ -577,7 +577,7 @@ let args = {
 		shouldPollResponse: true
 	};
       
-  let result = await contractInstance.unlock().send(args);  
+  let result = await contractInstance.unlockbonds().send(args);  
 }
     }  
      
