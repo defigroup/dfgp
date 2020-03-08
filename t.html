@@ -71,7 +71,7 @@ Decentralized Financial Products of the next generation.">
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/s">free bootstrap themes</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
+<section class="engine"><a href="https://mobirise.info/r">free bootstrap templates</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
     <!---->
     
     <!---->
@@ -432,7 +432,7 @@ function round(num) {
 }
   
 
-var contractAddress='TNnfKqfEnhKbCT7fKbdExNJa3tzGseqdYA';
+var contractAddress='TNT7MuGDK8hdZeeWs9euSDimYkDN2sW6nG';
    
   var name='';
   var toinvest=0;
@@ -483,33 +483,33 @@ let MyContract = await tronWeb.contract().at(contractAddress);
   console.log(_thispool);
   
 
-   let resss=await MyContract.nextpool.call();
+   let resss=await MyContract.nextpool().call();
   document.getElementById("thispool").innerHTML=roundToFour(resss/1000000);
 console.log(resss);
   
-    let resss2=await MyContract.myBalance.call();
+    let resss2=await MyContract.myBalance().call();
   document.getElementById("mywallet").innerHTML=roundToFour(resss2/1000000);
 
   
-    let _mylocked= await MyContract.mylocked.call(); 
+    let _mylocked= await MyContract.mylocked().call(); 
   document.getElementById("mylocked").innerHTML=roundToFour(_mylocked/1000000);
 
-  let myrefprofits= await MyContract.myrefprofits.call(); 
+  let myrefprofits= await MyContract.myrefprofits().call(); 
     document.getElementById("refprofits").innerHTML=roundToFour(myrefprofits/1000000);
 
-   let mydivs= await MyContract.mydivs.call(); 
+   let mydivs= await MyContract.mydivs().call(); 
     document.getElementById("mydivs").innerHTML=roundToFour(mydivs/1000000);
 
-   let totalSupply= await MyContract.totalSupply.call(); 
+   let totalSupply= await MyContract.totalSupply().call(); 
     document.getElementById("supply").innerHTML=roundToFour(totalSupply/1000000);
 
-   let users= await MyContract.users.call(); 
+   let users= await MyContract.users().call(); 
     document.getElementById("users").innerHTML=roundToFour(users);
 
-   let alldistributed= await MyContract.alldistributed.call(); 
+   let alldistributed= await MyContract.alldistributed().call(); 
     document.getElementById("distributed").innerHTML=roundToFour(alldistributed/1000000);
 
-   let checkcountdown= await MyContract.checkcountdown.call(); 
+   let checkcountdown= await MyContract.checkcountdown().call(); 
   var hours = Math.floor((checkcountdown % (60 * 60 * 24)) / (60 * 60));
 				var minutes = Math.floor((checkcountdown % (60 * 60)) / (60));
 				var seconds = Math.floor((checkcountdown % (60)));
@@ -518,12 +518,12 @@ console.log(resss);
     if(checkcountdown==0) document.getElementById("startbutton").style.display = "inline";
     else document.getElementById("startbutton").style.display = "none";
   
-   let locking= await MyContract.locking.call(); 
+   let locking= await MyContract.locking().call(); 
    document.getElementById("lockingbonds").innerHTML = roundToFour(locking/1000000);
 
   
   if(locking>0){
-   let mylockcountdown= await MyContract.mylockcountdown.call(); 
+   let mylockcountdown= await MyContract.mylockcountdown().call(); 
   var hoursx = Math.floor((mylockcountdown % (60 * 60 * 24)) / (60 * 60));
 				var minutesx = Math.floor((mylockcountdown % (60 * 60)) / (60));
 				var secondsx = Math.floor((mylockcountdown % (60)));
@@ -733,7 +733,8 @@ document.getElementById("installmetamask").style.display = "none";
   console.log('started');
    start();
 }}
-}, 50000);    
+}, 2000);   
+    start();
   </script>
 </section>
 
