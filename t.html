@@ -71,7 +71,7 @@ Decentralized Financial Products of the next generation.">
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/j">website templates</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
+<section class="engine"><a href="https://mobirise.info/k">develop free website</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
     <!---->
     
     <!---->
@@ -488,10 +488,12 @@ let MyContract = await tronWeb.contract().at(contractAddress);
   
     let _myBalance= await MyContract.myBalance.call();
   document.getElementById("mywallet").innerHTML=roundToFour(_myBalance/1000000);
-
+console.log(_myBalance);
+  
     let _mylocked= await MyContract.mylocked.call(); 
   document.getElementById("mylocked").innerHTML=roundToFour(_mylocked/1000000);
-  
+ console.log(_mylocked);
+   
   let myrefprofits= await MyContract.myrefprofits.call(); 
     document.getElementById("refprofits").innerHTML=roundToFour(myrefprofits/1000000);
 
