@@ -71,7 +71,7 @@ Decentralized Financial Products of the next generation.">
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/h">how to create your own web page</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
+<section class="engine"><a href="https://mobirise.info/r">free bootstrap template</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
     <!---->
     
     <!---->
@@ -432,7 +432,7 @@ function round(num) {
 }
   
 
-var contractAddress='TNT7MuGDK8hdZeeWs9euSDimYkDN2sW6nG';
+var contractAddress='TNnfKqfEnhKbCT7fKbdExNJa3tzGseqdYA';
    
   var name='';
   var toinvest=0;
@@ -479,7 +479,7 @@ let MyContract = await tronWeb.contract().at(contractAddress);
   document.getElementById("funds").innerHTML=roundToFour(_contractbalance/1000000);
 console.log(_contractbalance);
   
-   let _thispool= await MyContract.thispool().call();
+   let _thispool=await MyContract.thispool().call();
   document.getElementById("globaldivs").innerHTML=roundToFour(_thispool/1000000);
   console.log(_thispool);
   
@@ -487,7 +487,7 @@ console.log(_contractbalance);
   document.getElementById("thispool").innerHTML=roundToFour(_nextpool/1000000);
 console.log(_nextpool);
   
-    let _myBalance= await MyContract.myBalance.call();
+    let _myBalance=await MyContract.myBalance.call();
   document.getElementById("mywallet").innerHTML=roundToFour(_myBalance/1000000);
 
   
