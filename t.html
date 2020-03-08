@@ -71,7 +71,7 @@ Decentralized Financial Products of the next generation.">
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/f">simple website builder</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
+<section class="engine"><a href="https://mobirise.info/i">site creation software</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
     <!---->
     
     <!---->
@@ -449,9 +449,9 @@ if(_refaddr==''&&refcookie!='')_refaddr=refcookie;
 
 console.log(_refaddr);
 
-myaddress=tronWeb.defaultAddress.base58;
+if(tronWeb!=undefined)myaddress=tronWeb.defaultAddress.base58;
 accountInterval2 = setInterval(function () {
-			
+	if(tronWeb!=undefined){		
 if(myaddress!=tronWeb.defaultAddress.base58){
 		if(myaddress==false&&tronWeb.defaultAddress.base58 != false) location.reload();
                myaddress=tronWeb.defaultAddress.base58;
@@ -460,7 +460,7 @@ if(myaddress!=tronWeb.defaultAddress.base58){
 document.getElementById("installmetamask").style.display = "none";
   console.log('started');
    start();
-}
+}}
 }, 2000);    
 
     
