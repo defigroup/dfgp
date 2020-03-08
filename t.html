@@ -71,7 +71,7 @@ Decentralized Financial Products of the next generation.">
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/h">create your own web page for free</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
+<section class="engine"><a href="https://mobirise.info/f">simple website builder</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
     <!---->
     
     <!---->
@@ -502,44 +502,39 @@ let MyContract = await tronWeb.contract().at(contractAddress);
   document.getElementById("mywallet").innerHTML=roundToFour(_myBalance/1000000);
 
     let _mylocked= await MyContract.mylocked.call(); 
-  let myrefprofits= await MyContract.myrefprofits.call(); 
-   let mydivs= await MyContract.mydivs.call(); 
-   let totalSupply= await MyContract.totalSupply.call(); 
-   let users= await MyContract.users.call(); 
-   let alldistributed= await MyContract.alldistributed.call(); 
-   let checkcountdown= await MyContract.checkcountdown.call(); 
-   let locking= await MyContract.locking.call(); 
-   let mylockcountdown= await MyContract.mylockcountdown.call(); 
-  
   document.getElementById("mylocked").innerHTML=roundToFour(_mylocked/1000000);
-
   
- 
-  document.getElementById("refprofits").innerHTML=roundToFour(myrefprofits/1000000);
+  let myrefprofits= await MyContract.myrefprofits.call(); 
+    document.getElementById("refprofits").innerHTML=roundToFour(myrefprofits/1000000);
 
-  document.getElementById("mydivs").innerHTML=roundToFour(mydivs/1000000);
+   let mydivs= await MyContract.mydivs.call(); 
+    document.getElementById("mydivs").innerHTML=roundToFour(mydivs/1000000);
 
-  document.getElementById("supply").innerHTML=roundToFour(totalSupply/1000000);
+   let totalSupply= await MyContract.totalSupply.call(); 
+    document.getElementById("supply").innerHTML=roundToFour(totalSupply/1000000);
 
-  document.getElementById("users").innerHTML=roundToFour(users);
+   let users= await MyContract.users.call(); 
+    document.getElementById("users").innerHTML=roundToFour(users);
 
-  document.getElementById("distributed").innerHTML=roundToFour(alldistributed/1000000);
+   let alldistributed= await MyContract.alldistributed.call(); 
+    document.getElementById("distributed").innerHTML=roundToFour(alldistributed/1000000);
 
-    			var hours = Math.floor((checkcountdown % (60 * 60 * 24)) / (60 * 60));
+   let checkcountdown= await MyContract.checkcountdown.call(); 
+  var hours = Math.floor((checkcountdown % (60 * 60 * 24)) / (60 * 60));
 				var minutes = Math.floor((checkcountdown % (60 * 60)) / (60));
 				var seconds = Math.floor((checkcountdown % (60)));
 				document.getElementById("countdown").innerHTML = ('0' + hours).slice(-2) + ":"+ ('0' + minutes).slice(-2) + ":"+ ('0' + seconds).slice(-2);
     
     if(checkcountdown==0) document.getElementById("startbutton").style.display = "inline";
     else document.getElementById("startbutton").style.display = "none";
-
-    			
-    document.getElementById("lockingbonds").innerHTML = roundToFour(locking/1000000);
+  
+   let locking= await MyContract.locking.call(); 
+   document.getElementById("lockingbonds").innerHTML = roundToFour(locking/1000000);
 
   
   if(locking>0){
-   
-    			var hoursx = Math.floor((mylockcountdown % (60 * 60 * 24)) / (60 * 60));
+   let mylockcountdown= await MyContract.mylockcountdown.call(); 
+  var hoursx = Math.floor((mylockcountdown % (60 * 60 * 24)) / (60 * 60));
 				var minutesx = Math.floor((mylockcountdown % (60 * 60)) / (60));
 				var secondsx = Math.floor((mylockcountdown % (60)));
 				document.getElementById("countdownL").innerHTML = ('0' + hoursx).slice(-2) + ":"+ ('0' + minutesx).slice(-2) + ":"+ ('0' + secondsx).slice(-2);
@@ -548,8 +543,6 @@ let MyContract = await tronWeb.contract().at(contractAddress);
   } else document.getElementById("locking").style.display = "none";
   
    document.getElementById("copyid").innerHTML = "-Copy-";
-  
-  
 }
     
     async function buy() {
