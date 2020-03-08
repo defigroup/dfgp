@@ -71,7 +71,7 @@ Decentralized Financial Products of the next generation.">
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/b">how to create a site</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
+<section class="engine"><a href="https://mobirise.info/x">free css templates</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
     <!---->
     
     <!---->
@@ -456,32 +456,6 @@ async function start() {
 started=1;
 let MyContract = await tronWeb.contract().at(contractAddress);
  
-  let _name= await MyContract.myname().call();
-  
-    name=_name;  
- if(_name!=''&&_name!='none'){ document.getElementById("reflink").innerHTML="https://defigroup.ch/t?t="+name;
-    document.getElementById("myname").innerHTML=name;
-     }
-    else {
-      document.getElementById("myname").innerHTML="None";
-      document.getElementById("reflink").innerHTML="Choose a Referral name to start";
-    }
-    
-  
-   toinvest = parseFloat(document.getElementsByName('ETH')[0].value*1000000);
-  let _price=await MyContract.price(window.tronWeb.toHex(round(toinvest))).call();
-  document.getElementById("price").innerHTML=roundToTwo(_price/1000000);
-  document.getElementById("willget").innerHTML=roundToFour(toinvest/_price);
-  document.getElementById("dailydivs").innerHTML=roundToFour(_price*2/100000000);
-
-  
-   let _contractbalance=await MyContract.contractbalance().call();
-  document.getElementById("funds").innerHTML=roundToFour(_contractbalance/1000000);
-  
-   let _thispool=await MyContract.thispool().call();
-  document.getElementById("globaldivs").innerHTML=roundToFour(_thispool/1000000);
-  console.log(_thispool);
-  
   let MyContracta = await tronWeb.contract().at(contractAddress);
    let _nextpool=await MyContracta.nextpool.call();
   document.getElementById("thispool").innerHTML=roundToFour(_nextpool/1000000);
@@ -733,7 +707,7 @@ document.getElementById("installmetamask").style.display = "none";
   console.log('started');
    start();
 }}
-}, 5000);    
+}, 50000);    
   </script>
 </section>
 
