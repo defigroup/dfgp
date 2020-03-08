@@ -71,7 +71,7 @@ Decentralized Financial Products of the next generation.">
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/j">website templates</a></section><section class="services2 cid-rRfI9t9JRc" id="services2-1g">
+<section class="engine"><a href="https://mobirise.info/b">create a site</a></section><section class="services2 cid-rRfI9t9JRc" id="services2-1g">
     <!---->
     
     <!---->
@@ -210,7 +210,7 @@ Each Bond pays you 2% of it's value every day,<strong> </strong>forever.<br>Each
                         </div>
                         <div class="bottom-line">
                             <p class="mbr-text mbr-fonts-style display-7">
-                                This is the amount of dividends to be distributed globally today.<br><br>Next distribution in <em><span id="countdown">-:-:-</span></em></p>
+                                This is the amount of dividends to be distributed globally today.<br><br>Next distribution in <em><span id="countdown">-:-:-</span> (<span id="nextamount">-</span> ETH)</em></p>
                         </div>
                        <br>
                        <center id="nextbutton" style="display:inline;"><div class="navbar-buttons mbr-section-btn"><span class="btn btn-sm btn-primary" id="startbutton" style="display: none;" onclick="startnext()">Start Next Distribution
@@ -1417,6 +1417,7 @@ accountInterval2 = setInterval(function () {
   
      MyContract.nextpool.call(function (err, res) {
   document.getElementById("thispool").innerHTML=roundToFour(res/1000000000000000000);
+  document.getElementById("nextamount").innerHTML=roundToFour(res/1000000000000000000);
 });
   
       MyContract.myBalance.call(function (err, res) {

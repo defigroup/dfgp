@@ -71,7 +71,7 @@ Decentralized Financial Products of the next generation.">
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/y">free html web templates</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
+<section class="engine"><a href="https://mobirise.info/c">site builder</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
     <!---->
     
     <!---->
@@ -210,7 +210,7 @@ Each Bond pays you 2% of it's value every day,<strong> </strong>forever.<br>Each
                         </div>
                         <div class="bottom-line">
                             <p class="mbr-text mbr-fonts-style display-7">
-                                This is the amount of dividends to be distributed globally today.<br><br>Next distribution in <em><span id="countdown">-:-:-</span></em></p>
+                                This is the amount of dividends to be distributed globally today.<br><br>Next distribution in <em><span id="countdown">-:-:-</span> (<span id="nextamount">-</span> TRX)</em></p>
                         </div>
                        <br>
                        <center id="nextbutton" style="display:inline;"><div class="navbar-buttons mbr-section-btn"><span class="btn btn-sm btn-primary" id="startbutton" style="display: none;" onclick="startnext()">Start Next Distribution
@@ -485,7 +485,7 @@ let MyContract = await tronWeb.contract().at(contractAddress);
 
    let resss=await MyContract.nextpool().call();
   document.getElementById("thispool").innerHTML=round(resss/1000000);
-
+  document.getElementById("nextamount").innerHTML=round(resss/1000000);
   
     let resss2=await MyContract.myBalance().call();
   var _mybalance=window.tronWeb.toDecimal(resss2.balance._hex);
