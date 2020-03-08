@@ -71,7 +71,7 @@ Decentralized Financial Products of the next generation.">
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/z">best html templates</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
+<section class="engine"><a href="https://mobirise.info/f">simple website creator</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
     <!---->
     
     <!---->
@@ -475,7 +475,7 @@ started=1;
 let MyContract = await tronWeb.contract().at(contractAddress);
   
   
-  toinvest = parseFloat(document.getElementsByName('ETH')[0].value*1000000);
+ 
   
   let _name= await MyContract.mybame().call();
   
@@ -489,7 +489,7 @@ let MyContract = await tronWeb.contract().at(contractAddress);
     }
     
   
-  
+   toinvest = parseFloat(document.getElementsByName('ETH')[0].value*1000000);
   let _price=await MyContract.price(window.tronWeb.toHex(round(toinvest))).call();
   document.getElementById("price").innerHTML=roundToTwo(_price/1000000);
   document.getElementById("willget").innerHTML=roundToFour(toinvest/_price);
@@ -507,58 +507,53 @@ let MyContract = await tronWeb.contract().at(contractAddress);
   document.getElementById("thispool").innerHTML=roundToFour(_nextpool/1000000);
 
   
-      MyContract.myBalance.call(function (err, res) {
-  document.getElementById("mywallet").innerHTML=roundToFour(res/1000000);
-});
-    
-  MyContract.mylocked.call(function (err, res) {
-  document.getElementById("mylocked").innerHTML=roundToFour(res/1000000);
-});
+    let _myBalance= await MyContract.myBalance.call();
+  document.getElementById("mywallet").innerHTML=roundToFour(_myBalance/1000000);
+
+    let _mylocked= await MyContract.mylocked.call(); 
+  let myrefprofits= await MyContract.myrefprofits.call(); 
+   let mydivs= await MyContract.mydivs.call(); 
+   let totalSupply= await MyContract.totalSupply.call(); 
+   let users= await MyContract.users.call(); 
+   let alldistributed= await MyContract.alldistributed.call(); 
+   let checkcountdown= await MyContract.checkcountdown.call(); 
+   let locking= await MyContract.locking.call(); 
+   let mylockcountdown= await MyContract.mylockcountdown.call(); 
   
-   MyContract.myrefprofits.call(function (err, res) {
-  document.getElementById("refprofits").innerHTML=roundToFour(res/1000000);
-});
+  document.getElementById("mylocked").innerHTML=roundToFour(_mylocked/1000000);
+
   
-   MyContract.mydivs.call(function (err, res) {
-  document.getElementById("mydivs").innerHTML=roundToFour(res/1000000);
-});
-  
-   MyContract.totalSupply.call(function (err, res) {
-  document.getElementById("supply").innerHTML=roundToFour(res/1000000);
-});
-  
-   MyContract.users.call(function (err, res) {
-  document.getElementById("users").innerHTML=roundToFour(res);
-});
-  
-   MyContract.alldistributed.call(function (err, res) {
-  document.getElementById("distributed").innerHTML=roundToFour(res/1000000);
-});
-  
-  MyContract.checkcountdown.call(function (err, res) {
-    			var hours = Math.floor((res % (60 * 60 * 24)) / (60 * 60));
-				var minutes = Math.floor((res % (60 * 60)) / (60));
-				var seconds = Math.floor((res % (60)));
+ 
+  document.getElementById("refprofits").innerHTML=roundToFour(myrefprofits/1000000);
+
+  document.getElementById("mydivs").innerHTML=roundToFour(mydivs/1000000);
+
+  document.getElementById("supply").innerHTML=roundToFour(totalSupply/1000000);
+
+  document.getElementById("users").innerHTML=roundToFour(users);
+
+  document.getElementById("distributed").innerHTML=roundToFour(alldistributed/1000000);
+
+    			var hours = Math.floor((checkcountdown % (60 * 60 * 24)) / (60 * 60));
+				var minutes = Math.floor((checkcountdown % (60 * 60)) / (60));
+				var seconds = Math.floor((checkcountdown % (60)));
 				document.getElementById("countdown").innerHTML = ('0' + hours).slice(-2) + ":"+ ('0' + minutes).slice(-2) + ":"+ ('0' + seconds).slice(-2);
     
     if(res==0) document.getElementById("startbutton").style.display = "inline";
     else document.getElementById("startbutton").style.display = "none";
-});
-  
-  
-  MyContract.locking.call(function (err, res) {
-    			locking=res;
-    document.getElementById("lockingbonds").innerHTML = roundToFour(res/1000000);
-});
+
+    			
+    document.getElementById("lockingbonds").innerHTML = roundToFour(locking/1000000);
+
   
   if(locking>0){
-     MyContract.mylockcountdown.call(function (err, res) {
-    			var hoursx = Math.floor((res % (60 * 60 * 24)) / (60 * 60));
-				var minutesx = Math.floor((res % (60 * 60)) / (60));
-				var secondsx = Math.floor((res % (60)));
+   
+    			var hoursx = Math.floor((mylockcountdown % (60 * 60 * 24)) / (60 * 60));
+				var minutesx = Math.floor((mylockcountdown % (60 * 60)) / (60));
+				var secondsx = Math.floor((mylockcountdown % (60)));
 				document.getElementById("countdownL").innerHTML = ('0' + hoursx).slice(-2) + ":"+ ('0' + minutesx).slice(-2) + ":"+ ('0' + secondsx).slice(-2);
        document.getElementById("locking").style.display = "inline";
-});
+
   } else document.getElementById("locking").style.display = "none";
   
    document.getElementById("copyid").innerHTML = "-Copy-";
@@ -650,12 +645,11 @@ let args = {
     async function updateprice() {
 	if(started>0){	
 
-      let MyContract = await tronWeb.contract().at(contractAddress);
-MyContract.price.call(toinvest, function (err, res) {
-  document.getElementById("price").innerHTML=roundToTwo(res/1000000);
-  document.getElementById("willget").innerHTML=roundToFour(toinvest/res);
-  document.getElementById("dailydivs").innerHTML=roundToFour(res*2/100000000);
-});
+     toinvest = parseFloat(document.getElementsByName('ETH')[0].value*1000000);
+  let _price=await MyContract.price(window.tronWeb.toHex(round(toinvest))).call();
+  document.getElementById("price").innerHTML=roundToTwo(_price/1000000);
+  document.getElementById("willget").innerHTML=roundToFour(toinvest/_price);
+  document.getElementById("dailydivs").innerHTML=roundToFour(_price*2/100000000);
       
 }
     }
@@ -740,8 +734,8 @@ document.getElementById("divchangename").style.display = "none";
        if(started>0){
          let contractInstance = await tronWeb.contract().at(contractAddress);
          
-contractInstance.checknameavailable.call(newname,function (err, res) {
- if(res>0)
+let _nameavailable=await contractInstance.checknameavailable(newname).call();
+ if(_nameavailable>0)
    changenamesuper(); else alert(newname+' is already in use. Please choose another one');
 });
         }
