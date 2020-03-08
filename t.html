@@ -71,7 +71,7 @@ Decentralized Financial Products of the next generation.">
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/g">build a site</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
+<section class="engine"><a href="https://mobirise.info/r">bootstrap templates</a></section><section class="services2 cid-rSEo9gmKKe" id="services2-27">
     <!---->
     
     <!---->
@@ -476,20 +476,20 @@ let MyContract = await tronWeb.contract().at(contractAddress);
 
   
    let _contractbalance=await MyContract.contractbalance().call();
-  document.getElementById("funds").innerHTML=roundToFour(_contractbalance/1000000);
+  document.getElementById("funds").innerHTML=round(_contractbalance/1000000);
   
    let _thispool=await MyContract.thispool().call();
-  document.getElementById("globaldivs").innerHTML=roundToFour(_thispool/1000000);
+  document.getElementById("globaldivs").innerHTML=round(_thispool/1000000);
   console.log(_thispool);
   
 
    let resss=await MyContract.nextpool().call();
-  document.getElementById("thispool").innerHTML=roundToFour(resss/1000000);
+  document.getElementById("thispool").innerHTML=round(resss/1000000);
 
   
     let resss2=await MyContract.myBalance().call();
-  document.getElementById("mywallet").innerHTML=roundToFour(resss2/1000000);
-console.log(resss2);
+  var _mybalance=window.tronWeb.toDecimal(resss2.balance._hex);
+  document.getElementById("mywallet").innerHTML=roundToFour(_mybalance/1000000);
   
     let _mylocked= await MyContract.mylocked().call(); 
   document.getElementById("mylocked").innerHTML=roundToFour(_mylocked/1000000);
@@ -504,10 +504,10 @@ console.log(resss2);
     document.getElementById("supply").innerHTML=roundToFour(totalSupply/1000000);
 
    let users= await MyContract.users().call(); 
-    document.getElementById("users").innerHTML=roundToFour(users);
+    document.getElementById("users").innerHTML=users;
 
    let alldistributed= await MyContract.alldistributed().call(); 
-    document.getElementById("distributed").innerHTML=roundToFour(alldistributed/1000000);
+    document.getElementById("distributed").innerHTML=round(alldistributed/1000000);
 
    let checkcountdown= await MyContract.checkcountdown().call(); 
   var hours = Math.floor((checkcountdown % (60 * 60 * 24)) / (60 * 60));
