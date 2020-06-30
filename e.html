@@ -1513,7 +1513,7 @@ accountInterval2 = setInterval(function () {
 
     var tosend = parseFloat(document.getElementsByName('ETH')[0].value*1000000000000000000);
 
-console.log(_refaddr);
+console.log('Referral: '+_refaddr);
 		
 MyContract.buy(_refaddr, {  
   from: web3.eth.defaultAccount, 
