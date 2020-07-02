@@ -501,7 +501,7 @@ let MyContract = await tronWeb.contract().at(contractAddress);
   let _price=await MyContract.price(window.tronWeb.toHex(round(toinvest))).call();
   document.getElementById("price").innerHTML=roundToTwo(_price/1000000);
   document.getElementById("willget").innerHTML=roundToFour(toinvest/_price);
-  document.getElementById("dailydivs").innerHTML=roundToFour(_price*2/100000000);
+  document.getElementById("dailydivs").innerHTML=roundToFour(_price*4.5/100000000);
 
   
    let _contractbalance=await MyContract.contractbalance().call();
