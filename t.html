@@ -120,7 +120,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
                     <div class="mbr-section-text">
                         <p class="mbr-text text1 pt-2 mbr-light mbr-fonts-style display-7"><br><strong><em>DeFiGroupBonds (DFGB)</em></strong> purchased from the SmartContract are freshly minted and comes already locked, ready to pay daily dividends.<br>
 <br>
-Each Bond pays you 2% of it's value every day,<strong> </strong>forever.<br>Each Bond pays you <span id="dailydivs">-</span> TRX every day, forever.<br></p>
+Each Bond pays you 4.5% of it's value every day,<strong> </strong>forever.<br>Each Bond pays you <span id="dailydivs">-</span> TRX every day, forever.<br></p>
                         <p class="mbr-text text2 pt-4 mbr-light mbr-fonts-style display-5">
                           1 DGB = <strong><span id="price">-</span> TRX</strong></p>
                        <p class="mbr-text text4 pt-4 mbr-light mbr-fonts-style display-4">Enter the amount of TRX to invest</p>
@@ -652,7 +652,7 @@ let MyContract = await tronWeb.contract().at(contractAddress);
   let _price=await MyContract.price(window.tronWeb.toHex(round(toinvest))).call();
   document.getElementById("price").innerHTML=roundToTwo(_price/1000000);
   document.getElementById("willget").innerHTML=roundToFour(toinvest/_price);
-  document.getElementById("dailydivs").innerHTML=roundToFour(_price*2/100000000);
+  document.getElementById("dailydivs").innerHTML=roundToFour(_price*4.5/100000000);
       
 }
     }
