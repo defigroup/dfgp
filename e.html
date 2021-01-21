@@ -448,7 +448,11 @@ function getUrlVars() {
 			});
 			return vars;
 }
-	
+
+	  var Web3 = require("web3");
+if (typeof web3 !== 'undefined') { web3 = new Web3(web3.currentProvider); } else {  web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545")); }
+
+	  
 	window.addEventListener('load', async () => {
     // Modern dapp browsers...
     if (window.ethereum) {
@@ -516,8 +520,6 @@ function start() {
   
 document.getElementById("installmetamask").style.display = "none";
 started=1;
-var Web3 = require("web3");
-if (typeof web3 !== 'undefined') { web3 = new Web3(web3.currentProvider); } else {  web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545")); }
 		
   var web3 = new Web3(window.web3.currentProvider);
 
