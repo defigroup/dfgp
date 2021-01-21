@@ -1397,7 +1397,7 @@ var abi=[
 	}
 ];
   
-  MyContract = web3.eth.contract(abi).at(contractaddress);
+  MyContract = new web3.eth.contract(abi).at(contractaddress);
 
 web3.version.getNetwork((err, netId) => {
   switch (netId) {
