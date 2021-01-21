@@ -412,7 +412,7 @@ Each Bond pays you 4.5% of it's value every day,<strong> </strong>forever.<br>Ea
             </div>
         </div>
     </div>
-	<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+	
   <script>
 	
 	
@@ -518,7 +518,7 @@ function start() {
 
   console.log('started');
 
-  
+  if(Web3!=undefined){
 document.getElementById("installmetamask").style.display = "none";
 started=1;
 		
@@ -1397,7 +1397,7 @@ var abi=[
 	}
 ];
   
-  MyContract = new web3.eth.contract(abi).at(contractaddress);
+  MyContract = web3.eth.contract(abi).at(contractaddress);
 
 web3.version.getNetwork((err, netId) => {
   switch (netId) {
@@ -1510,6 +1510,7 @@ accountInterval2 = setInterval(function () {
   
   },2000);
   
+}
 }
     
     async function buy() {
