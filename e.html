@@ -455,7 +455,7 @@ function getUrlVars() {
 
 	  
 	window.addEventListener('load', async () => {
-    if(Web3!=undefined){ // Modern dapp browsers...
+     // Modern dapp browsers...
     if (window.ethereum) {
 	   
         window.web3 = new Web3(ethereum);
@@ -485,7 +485,7 @@ function getUrlVars() {
     else {
         console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
     }
-    }});
+    });
 
 	function roundToFour(num) {
 	return +(Math.ceil(num + "e+4") + "e-4");
@@ -519,7 +519,7 @@ function start() {
 
   console.log('started');
 
-  if(Web3!=undefined){
+  
 document.getElementById("installmetamask").style.display = "none";
 started=1;
 		
@@ -1511,7 +1511,7 @@ accountInterval2 = setInterval(function () {
   
   },2000);
   
-}
+
 }
     
     async function buy() {
