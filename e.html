@@ -417,6 +417,28 @@ Each Bond pays you 4.5% of it's value every day,<strong> </strong>forever.<br>Ea
 	
 var started=0;	
 	
+	  var web3 = new Web3();
+   if (window.ethereum) {
+    web3 = new Web3(window.ethereum);
+    try { 
+       window.ethereum.enable().then(function() {
+           // User has allowed account access to DApp...
+       });
+    } catch(e) {
+       // User has denied account access to DApp...
+    }
+ }
+ // Legacy DApp Browsers
+ else if (window.web3) {
+     web3 = new Web3(web3.currentProvider);
+ }
+ // Non-DApp Browsers
+ else {
+     alert('You have to install MetaMask !');
+ }
+  
+   window.ethereum.enable()
+	  
     function getCookie(cname) {
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
