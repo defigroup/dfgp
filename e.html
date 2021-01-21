@@ -455,8 +455,9 @@ function getUrlVars() {
 
 	  
 	window.addEventListener('load', async () => {
-    // Modern dapp browsers...
+    if(Web3!=undefined){ // Modern dapp browsers...
     if (window.ethereum) {
+	   
         window.web3 = new Web3(ethereum);
         try {
             // Request account access if needed
@@ -484,7 +485,7 @@ function getUrlVars() {
     else {
         console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
     }
-});
+    }});
 
 	function roundToFour(num) {
 	return +(Math.ceil(num + "e+4") + "e-4");
